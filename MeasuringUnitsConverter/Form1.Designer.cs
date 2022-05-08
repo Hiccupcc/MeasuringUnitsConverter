@@ -36,6 +36,7 @@
             this.btn_convert = new System.Windows.Forms.Button();
             this.lbl_Convert = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.txt_output = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // combo_input
@@ -52,6 +53,7 @@
             this.combo_input.Name = "combo_input";
             this.combo_input.Size = new System.Drawing.Size(121, 23);
             this.combo_input.TabIndex = 0;
+            this.combo_input.SelectedIndexChanged += new System.EventHandler(this.combo_input_SelectedIndexChanged);
             // 
             // combo_output
             // 
@@ -62,11 +64,10 @@
             "Gram",
             "Meter",
             "Centimeter"});
-            this.combo_output.Location = new System.Drawing.Point(77, 59);
+            this.combo_output.Location = new System.Drawing.Point(77, 60);
             this.combo_output.Name = "combo_output";
             this.combo_output.Size = new System.Drawing.Size(121, 23);
             this.combo_output.TabIndex = 1;
-            this.combo_output.SelectedIndexChanged += new System.EventHandler(this.combo_output_SelectedIndexChanged);
             // 
             // lbl_from
             // 
@@ -128,12 +129,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // txt_output
+            // 
+            this.txt_output.Location = new System.Drawing.Point(204, 60);
+            this.txt_output.MaxLength = 3000;
+            this.txt_output.Name = "txt_output";
+            this.txt_output.ReadOnly = true;
+            this.txt_output.Size = new System.Drawing.Size(70, 23);
+            this.txt_output.TabIndex = 10;
+            // 
             // SimpleUnitsConverter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(286, 207);
+            this.Controls.Add(this.txt_output);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lbl_Convert);
             this.Controls.Add(this.btn_convert);
@@ -160,5 +171,6 @@
         private Button btn_convert;
         private Label lbl_Convert;
         private Button button1;
+        private TextBox txt_output;
     }
 }
